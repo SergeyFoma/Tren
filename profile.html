@@ -1,0 +1,21 @@
+{% extends "comment/base.html" %}
+{% load static %}
+
+{% block sidebar %}
+	<p style='color:red;'>{{request.user.username}}</p>
+	<p class='email'>{{request.user.profile.email}}</p>
+	<p><img src="{{request.user.profile.avatar.url}}" alt=""width=100px;></p>
+
+
+<div class="update">
+	<form action=""method='post'enctype='multipart/form-data'>
+		{% csrf_token %}
+		{{ formprof.as_p }}
+		<p><input type="submit"value='Выбери фото'id='im'></p>
+		<p><button type='submit'>Update</button></p>
+	</form>
+</div>
+
+
+	<p><a href="{% url 'exit' %}">EXIT</a></p>
+{% endblock %}

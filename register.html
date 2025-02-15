@@ -1,0 +1,11 @@
+{% extends "comment/base.html" %}
+
+{% block sidebar %}
+
+	<form action=""method='post'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type='submit'>register</button>
+	</form>
+
+{% endblock %}
